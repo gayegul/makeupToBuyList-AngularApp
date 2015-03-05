@@ -1,3 +1,3 @@
-# SingleResExpAPI
+# makeupToBuyList
 
-A single resource REST API with Express that is backed by Mongo
+A simple full stack app that uses Angular and Node backed by MongoDB
