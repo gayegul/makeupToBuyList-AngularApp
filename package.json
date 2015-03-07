@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/gayegul/makeupToBuyList-AngularApp",
   "devDependencies": {
-    "chai": "^2.0.0",
+    "chai": "^2.1.1",
     "chai-http": "^1.0.0",
     "debowerify": "^1.2.0",
     "grunt": "^0.4.5",
