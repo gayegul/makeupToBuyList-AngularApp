@@ -5,6 +5,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-simple-mocha');
 
 	grunt.initConfig({
 		clean: {
@@ -43,10 +45,36 @@ module.exports = function(grunt) {
 			unit: {
 				configFile: 'karma.conf.js'
 			}
+		},
+		jshint: {
+			dev: {
+				options: {
+					node: true,
+					globals: {
+						describe: true,
+						it: true,
+						before: true,
+						after: true,
+						expect: true,
+						afterEach: true,
+						beforeEach: true,
+						angular: true,
+						chai: true
+					}
+				},
+				src: ['Gruntfile.js', 'app/**/*.js', 'test/**/*_test.js', 'index.js']
+			}
+		},
+		simplemocha: {
+			all: {
+				src: ['test/server/*_test.js']
+			}
 		}
 	});
 
-	grunt.registerTask('build', ['clean', 'browserify', 'copy']);
+	grunt.registerTask('build', ['clean', 'jshint:dev', 'browserify', 'copy']);
 	grunt.registerTask('build:test', ['browserify:test']);
 	grunt.registerTask('test:client', ['browserify:karmatest', 'karma:unit']);
+	grunt.registerTask('test:server', ['simplemocha:all']);
+	grunt.registerTask('default', ['build', 'build:test', 'test:client', 'test:server']);
 };

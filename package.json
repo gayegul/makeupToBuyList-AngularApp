@@ -1,33 +1,32 @@
 {
-  "name": "singleResExpAPI",
+  "name": "makeupAngularApp",
   "version": "1.0.0",
-  "description": "A single resource express mongo API",
+  "description": "A full stack webapp using Angular and backed by MongoDB",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/server/**/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gayegul/SingleResExpAPI.git"
+    "url": "https://github.com/gayegul/makeupToBuyList-AngularApp"
   },
   "keywords": [
     "express",
-    "mongo"
+    "mongo",
+    "angular"
   ],
   "author": "Gaye Bulut",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gayegul/SingleResExpAPI/issues"
+    "url": "https://github.com/gayegul/makeupToBuyList-AngularApp/issues"
   },
-  "homepage": "https://github.com/gayegul/SingleResExpAPI",
+  "homepage": "https://github.com/gayegul/makeupToBuyList-AngularApp",
   "devDependencies": {
-    "chai": "^2.0.0",
+    "chai": "^2.1.1",
     "chai-http": "^1.0.0",
     "debowerify": "^1.2.0",
-    "express": "^4.12.2",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.5.0",
-    "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jshint": "^0.11.0",
@@ -38,13 +37,11 @@
     "karma-firefox-launcher": "^0.1.4",
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
-    "mocha": "^2.1.0",
-    "mongoose": "^3.8.24"
+    "mocha": "^2.1.0"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
     "express": "^4.11.2",
-    "mongoose": "^3.8.23",
-    "package.json": "0.0.0"
+    "mongoose": "^3.8.23"
   }
 }

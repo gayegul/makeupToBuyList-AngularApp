@@ -1,7 +1,7 @@
 'use strict';
 
 process.env.MONGO_URI = 'mongodb://localhost/makeupapp_test';
-require('../server.js');
+require('../../server.js');
 var mongoose = require('mongoose');
 var chai = require('chai');
 var chaihttp = require('chai-http');
@@ -40,7 +40,6 @@ describe('makeups api end points', function() {
 		});
 	});
 
-
 	describe('already has stuff in database', function() {
 		var id;
 		beforeEach(function(done) {
@@ -58,7 +57,7 @@ describe('makeups api end points', function() {
 			.get('/makeups')
 			.end(function(err, res) {
 				expect(err).to.eql(null);
-				expect(Array.isArray(res.body)).to.be.true;
+				expect(Array.isArray(res.body)).to.eql(true);
 				expect(res.body[0]).to.have.property('brand');
 				done();
 			});
@@ -80,7 +79,7 @@ describe('makeups api end points', function() {
 			.delete('/makeups/' + id)
 			.end(function(err, res) {
 				expect(err).to.eql(null);
-				expect(res.body).to.eql({});
+				expect(res.body).to.eql({'msg': 'success!'});
 				done();
 			});
 		});
