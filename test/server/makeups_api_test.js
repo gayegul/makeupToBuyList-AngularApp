@@ -40,7 +40,6 @@ describe('makeups api end points', function() {
 		});
 	});
 
-
 	describe('already has stuff in database', function() {
 		var id;
 		beforeEach(function(done) {
